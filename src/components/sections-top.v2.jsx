@@ -9,7 +9,12 @@ import {
 } from "./ui";
 import { useOrder, PRODUCTS, ProductCard } from "./shop";
 import { Doodle, Mark, Note, Stamp, Scribble, Ringed } from "./doodles";
-import mbz_logo from "../assets/img/mbz_logo.png";
+import {
+  mbz_logo,
+  hero_img,
+  shoes_problem,
+  dr_martens_logo,
+} from "../assets/img";
 
 function TopMarquee() {
   const items = [
@@ -294,9 +299,9 @@ function Hero() {
             style={{ "--reveal-delay": "420ms" }}
           >
             {[
-              ["20+", "Marques"],
+              ["8+", "Modèles"],
               ["50+", "Modèles"],
-              ["100+", "Étudiants servis"],
+              ["2+", "Pré commandes"],
             ].map(([n, l]) => (
               <div className="hero__stat" key={l}>
                 <span className="hero__stat-n display">{n}</span>
@@ -331,7 +336,7 @@ function Hero() {
           />
 
           <img
-            src="assets/img/hero-model.png"
+            src={hero_img}
             alt="Étudiant MYBASKETZONE en tenue de soutenance"
             className="hero__model"
           />
@@ -354,7 +359,7 @@ function Hero() {
           <div className="hero__floattag hero__floattag--bot">
             <span className="hero__floattag-cap">À partir de</span>
             <span className="hero__floattag-price">
-              10 000 <i>FCFA</i>
+              22 500 <i>FCFA</i>
             </span>
           </div>
         </div>
@@ -395,6 +400,12 @@ function BrandStrip() {
             <span className="brandstrip__item" key={i}>
               {b}
               <Sep />
+              <img
+                style={{
+                  width: "",
+                }}
+                src={dr_martens_logo}
+              />
             </span>
           ))}
         </div>
