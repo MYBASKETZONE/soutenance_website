@@ -10,6 +10,13 @@ import deliver from "./delivers.png";
 import binome_1 from "./binome_1.png";
 import binome_2 from "./binome_2.png";
 import vans_knu from "./vans_knu.png";
+import air_force from "./airforce.png";
+import vans from "./vans.png";
+import loafer from "./loafer.png";
+import numeris from "./numeris.png";
+import dr_martens from "./martens.png";
+import samba from "./sambas.png";
+import martens_mocassins from "./martens_loafer.png";
 
 export {
   hero_img,
@@ -24,4 +31,11 @@ export {
   binome_1,
   binome_2,
   vans_knu,
+  air_force,
+  vans,
+  loafer,
+  numeris,
+  dr_martens,
+  samba,
+  martens_mocassins,
 };

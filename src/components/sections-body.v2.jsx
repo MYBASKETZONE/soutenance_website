@@ -7,6 +7,7 @@ import {
   binome_2,
   choose,
   colis,
+  converse,
   deliver,
   mbz_solutions,
   shoes_problem,
@@ -220,7 +221,7 @@ const JOURNEY_STEPS = [
     tag: "Réservée à ton nom",
     short: "Réserver",
     d: "Tu règles maintenant et ta paire passe à ton nom. Plus de course, plus de rupture la veille du grand jour.",
-    img: "assets/img/loafer-drmartens.png",
+    img: converse,
   },
   {
     n: "03",
