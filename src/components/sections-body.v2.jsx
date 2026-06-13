@@ -24,11 +24,7 @@ function Problem() {
               alt="Étudiants en tenue de soutenance, paires assorties"
             />
           </div>
-          <span className="story__stamp">
-            Rupture
-            <br />
-            imminente
-          </span>
+
           <Mark
             name="arrow-c"
             w={120}
