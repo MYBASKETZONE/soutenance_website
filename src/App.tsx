@@ -1,9 +1,21 @@
 import "./App.css";
-import { useReveal } from './components/ui';
-import { OrderProvider, OrderModal, CartDrawer } from './components/shop';
-import { TopMarquee, Nav, Hero, BrandStrip } from './components/sections-top.v2';
-import { Problem, Solution, Principle, Collection, Interstitial, Binome } from './components/sections-body.v2';
-import { CountdownSection, Testimonials, CtaBand, Footer } from './components/sections-end.v2';
+import { useReveal } from "./components/ui";
+import { OrderProvider, OrderModal, CartDrawer } from "./components/shop";
+import { TopMarquee, Nav, Hero } from "./components/sections-top.v2";
+import {
+  Problem,
+  Solution,
+  Principle,
+  Collection,
+  Interstitial,
+  Binome,
+} from "./components/sections-body.v2";
+import {
+  CountdownSection,
+  Testimonials,
+  CtaBand,
+  Footer,
+} from "./components/sections-end.v2";
 
 function App() {
   useReveal();
@@ -13,7 +25,6 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <BrandStrip />
         <Problem />
         <Solution />
         <Principle />
