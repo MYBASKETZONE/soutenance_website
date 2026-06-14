@@ -17,6 +17,9 @@ import numeris from "./numeris.png";
 import dr_martens from "./martens.png";
 import samba from "./sambas.png";
 import martens_mocassins from "./martens_loafer.png";
+import proof_1 from "./proof_1.jpeg";
+import proof_2 from "./proof_2.jpeg";
+import proof_3 from "./proof_3.jpeg";
 
 export {
   hero_img,
@@ -38,4 +41,7 @@ export {
   dr_martens,
   samba,
   martens_mocassins,
+  proof_1,
+  proof_2,
+  proof_3,
 };

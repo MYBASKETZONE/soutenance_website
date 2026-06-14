@@ -607,17 +607,7 @@ function Binome() {
             abordables, toi et ton binôme irez de paire — même énergie, même
             allure, zéro fausse note.
           </p>
-          <a
-            href="#collection"
-            className="btn binome__cta"
-            data-reveal
-            style={{ "--reveal-delay": "180ms" }}
-          >
-            <span>Composer le duo</span>
-            <span className="btn-arrow">
-              <Icon.Arrow />
-            </span>
-          </a>
+
           <Note
             className="hide-sm"
             tone="mut"
