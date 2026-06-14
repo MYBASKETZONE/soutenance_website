@@ -494,7 +494,7 @@
   color: var(--muted-2);
 }
 .story__head {
-  font-size: clamp(34px, 5vw, 70px);
+  font-size: clamp(24px, 6vw, 70px);
   line-height: 0.98;
   margin-bottom: 24px;
 }

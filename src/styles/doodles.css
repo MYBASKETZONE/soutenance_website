@@ -4,11 +4,11 @@
    fonts (cursive + marker), doodle primitives, and the
    storytelling annotations that guide the eye Oatly-style.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Shantell+Sans:ital,wght@0,500;0,600;0,700;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Shantell+Sans:ital,wght@0,500;0,600;0,700;1,600&display=swap");
 
 :root {
-  --script: 'Caveat', 'Comic Sans MS', cursive;
-  --hand: 'Shantell Sans', 'Comic Sans MS', cursive;
+  --script: "Caveat", "Comic Sans MS", cursive;
+  --hand: "Shantell Sans", "Comic Sans MS", cursive;
 }
 
 /* ---------- Doodle primitive ---------- */
@@ -18,11 +18,16 @@
   pointer-events: none;
   flex: none;
 }
-.doodle--abs { position: absolute; pointer-events: none; }
+.doodle--abs {
+  position: absolute;
+  pointer-events: none;
+}
 
 /* Section-scoped default doodle colour (overridable per-mark).
    Paper sections → ink; dark/black sections → cream. */
-.dscope { position: relative; }
+.dscope {
+  position: relative;
+}
 
 /* ---------- Handwritten margin note (cursive) ---------- */
 .hnote {
@@ -34,10 +39,18 @@
   color: var(--ink);
   letter-spacing: 0.01em;
 }
-.hnote--mut { color: var(--muted); }
-.hnote--green { color: var(--green); }
-.hnote--cream { color: var(--paper); }
-.hnote--signal { color: #B07A00; }
+.hnote--mut {
+  color: var(--muted);
+}
+.hnote--green {
+  color: var(--green);
+}
+.hnote--cream {
+  color: var(--paper);
+}
+.hnote--signal {
+  color: #b07a00;
+}
 
 /* ---------- Marker stamp word ---------- */
 .hstamp {
@@ -51,23 +64,56 @@
   padding: 7px 13px 6px;
   border-radius: 4px 12px 6px 14px;
 }
-.hstamp--ink { background: var(--ink); color: var(--paper); }
-.hstamp--signal { background: var(--signal); color: var(--ink); }
-.hstamp--green { background: var(--green); color: var(--paper); }
-.hstamp--cream { background: var(--paper); color: var(--ink); }
-.hstamp--outline { box-shadow: inset 0 0 0 2px var(--ink); color: var(--ink); }
+.hstamp--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+.hstamp--signal {
+  background: var(--signal);
+  color: var(--ink);
+}
+.hstamp--green {
+  background: var(--green);
+  color: var(--paper);
+}
+.hstamp--cream {
+  background: var(--paper);
+  color: var(--ink);
+}
+.hstamp--outline {
+  box-shadow: inset 0 0 0 2px var(--ink);
+  color: var(--ink);
+}
 
 /* ---------- Word with scribble underline ---------- */
-.scribbled { position: relative; display: inline-block; white-space: nowrap; }
-.scribbled__line { color: var(--signal); }
+.scribbled {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.scribbled__line {
+  color: var(--signal);
+}
 
 /* ---------- Word with hand-drawn ring ---------- */
-.ringed { position: relative; display: inline-block; white-space: nowrap; }
-.ringed__ring { z-index: -1; }
-.ringed--front .ringed__ring { z-index: 2; }
+.ringed {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.ringed__ring {
+  z-index: -1;
+}
+.ringed--front .ringed__ring {
+  z-index: 2;
+}
 
 /* ---------- A few reusable absolute placements ---------- */
-.dfloat { position: absolute; z-index: 4; pointer-events: none; }
+.dfloat {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
 
 /* Hand-drawn divider row of marks (e.g. between sections) */
 .doodlerow {
@@ -79,82 +125,177 @@
 }
 
 /* keep decorative marks from triggering horizontal scroll */
-.dscope { overflow: visible; }
+.dscope {
+  overflow: visible;
+}
 
 /* ---------- Mobile: thin out the busiest decorations ---------- */
 @media (max-width: 720px) {
-  .hide-sm { display: none !important; }
-  .hnote { font-size: clamp(16px, 5vw, 22px); }
+  .hide-sm {
+    display: none !important;
+  }
+  .hnote {
+    font-size: clamp(16px, 5vw, 22px);
+  }
 }
 
 /* ============================================================
    HERO anchors
    ============================================================ */
-.hero__copy { position: relative; }
-.hero__intro {
-  display: inline-flex; flex-direction: column; align-items: flex-start;
-  margin-bottom: 14px; color: var(--ink);
+.hero__copy {
+  position: relative;
 }
-.hero__intro .doodle { margin-left: 96px; }
+.hero__intro {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.hero__intro .doodle {
+  margin-left: 96px;
+}
 
 .hero__ctanote {
-  display: inline-flex; align-items: center; gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   margin-left: 4px;
 }
-.hero__cdwrap { position: relative; }
+.hero__cdwrap {
+  position: relative;
+}
 .hero__cdnote {
-  position: absolute; top: -22px; right: 6%; z-index: 5;
-  color: #B07A00;
+  position: absolute;
+  top: -22px;
+  right: 6%;
+  z-index: 5;
+  color: #b07a00;
 }
 .hero__medianote {
-  position: absolute; z-index: 4; left: 4%; bottom: 20%;
-  display: inline-flex; flex-direction: column; align-items: flex-start;
-  color: var(--ink); text-align: left;
+  position: absolute;
+  z-index: 4;
+  left: 4%;
+  bottom: 20%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--ink);
+  text-align: left;
 }
-.hero__medianote .doodle { margin-left: 30px; }
+.hero__medianote .doodle {
+  margin-left: 30px;
+}
 
 @media (max-width: 900px) {
-  .hero__cdnote { right: auto; left: 0; top: -26px; }
+  .hero__cdnote {
+    right: auto;
+    left: 0;
+    top: -26px;
+  }
 }
 
 /* ============================================================
    BODY section anchors
    ============================================================ */
-.jpanel__arrow { position: absolute; left: 2px; bottom: -18px; z-index: 1; }
-.inter__arrow { display: block; margin: 22px auto 0; }
-.collection__head { position: relative; }
-.collection__headl { position: relative; }
-.collection__stamp { display: inline-block; margin-top: 16px; }
+.jpanel__arrow {
+  position: absolute;
+  left: 2px;
+  bottom: -18px;
+  z-index: 1;
+}
+.inter__arrow {
+  display: block;
+  margin: 22px auto 0;
+}
+.collection__head {
+  position: relative;
+}
+.collection__headl {
+  position: relative;
+}
+.collection__stamp {
+  display: inline-block;
+  margin-top: 16px;
+}
 .binome__heart {
-  position: absolute; z-index: 5;
-  left: 50%; top: 46%; transform: translate(-50%, -50%) rotate(-8deg);
-  filter: drop-shadow(0 6px 14px rgba(1,171,49,0.18));
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  filter: drop-shadow(0 6px 14px rgba(1, 171, 49, 0.18));
 }
 
 /* ============================================================
    END section anchors
    ============================================================ */
-.cdsec__note { margin: 4px 0 2px; }
-.cdsec__ctawrap { position: relative; display: inline-flex; align-items: center; justify-content: center; }
-.cdsec__arrow { position: absolute; left: -78px; bottom: 6px; transform: rotate(-12deg); }
+.cdsec__note {
+  margin: 4px 0 2px;
+}
+.cdsec__ctawrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.cdsec__arrow {
+  position: absolute;
+  left: -78px;
+  bottom: 6px;
+  transform: rotate(-12deg);
+}
 
-.avis__head { position: relative; }
-.avis__headl { position: relative; }
-.avis__rating { position: relative; }
-.avis__ratingspark { position: absolute; top: -26px; right: 2px; }
+.avis__head {
+  position: relative;
+}
+.avis__headl {
+  position: relative;
+}
+.avis__rating {
+  position: relative;
+}
+.avis__ratingspark {
+  position: absolute;
+  top: -26px;
+  right: 2px;
+}
 
-.avcard { position: relative; }
-.avcard__heart { position: absolute; top: -14px; right: -10px; transform: rotate(12deg); z-index: 4; }
+.avcard {
+  position: relative;
+}
+.avcard__heart {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  transform: rotate(12deg);
+  z-index: 4;
+}
 
-.ctaband__actions { position: relative; }
-.ctaband__arrow { position: absolute; top: -52px; left: 8px; transform: rotate(6deg); z-index: 4; }
+.ctaband__actions {
+  position: relative;
+}
+.ctaband__arrow {
+  position: absolute;
+  top: -52px;
+  left: 8px;
+  transform: rotate(6deg);
+  z-index: 4;
+}
 
-.footer__sign { display: block; margin: 16px 0 4px; }
+.footer__sign {
+  display: block;
+  margin: 16px 0 4px;
+}
 
 @media (max-width: 900px) {
-  .cdsec__arrow { display: none; }
+  .cdsec__arrow {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .doodle { transition: none !important; }
+  .doodle {
+    transition: none !important;
+  }
 }
