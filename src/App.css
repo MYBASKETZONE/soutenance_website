@@ -1,4 +1,8 @@
-@import './styles/styles.css';
-@import './styles/components.css';
-@import './styles/sections.css';
-@import './styles/doodles.css';
+@import "./styles/styles.css";
+@import "./styles/components.css";
+@import "./styles/sections.css";
+@import "./styles/doodles.css";
+
+* {
+  outline: 1px solid red;
+}
