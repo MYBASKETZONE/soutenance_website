@@ -1221,6 +1221,66 @@
   height: 14px;
 }
 
+/* ---------- Proof gallery — staggered portrait screenshots ---------- */
+.wproofwall {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(16px, 2.4vw, 38px);
+  padding: 10px 0;
+}
+
+.wproof {
+  position: relative;
+  flex: 0 1 clamp(220px, 24vw, 320px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0e0e0c;
+  box-shadow:
+    0 26px 50px rgba(14, 14, 12, 0.18),
+    inset 0 0 0 1px rgba(14, 14, 12, 0.06),
+    0 0 0 7px #fff;
+  transition:
+    transform 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
+  will-change: transform;
+}
+.wproof img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 499 / 1080;
+  object-fit: cover;
+}
+.wproof:hover {
+  transform: rotate(0deg) translateY(-10px) scale(1.02) !important;
+  box-shadow:
+    0 40px 72px rgba(14, 14, 12, 0.28),
+    inset 0 0 0 1px rgba(14, 14, 12, 0.06),
+    0 0 0 7px #fff;
+  z-index: 8;
+}
+
+/* staggered offsets + organic tilts */
+.wproof--a {
+  transform: rotate(-3deg) translateY(26px);
+  z-index: 2;
+}
+.wproof--b {
+  transform: rotate(1.5deg) translateY(-10px);
+  z-index: 4;
+  margin: 0 -14px;
+}
+.wproof--c {
+  transform: rotate(3.4deg) translateY(34px);
+  z-index: 3;
+}
+
+.wproofwall__arrow {
+  z-index: 6;
+}
+
 /* ============================================================
    CTA band
    ============================================================ */
@@ -1295,7 +1355,8 @@
   padding: clamp(50px, 6vw, 80px) 0 36px;
 }
 .footer__top {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 48px;
@@ -1369,8 +1430,8 @@
    Responsive
    ============================================================ */
 @media (max-width: 1080px) {
-  .avis__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .wproofwall {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 920px) {
@@ -1500,6 +1561,7 @@
 }
 @media (max-width: 680px) {
   .footer__top {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
@@ -1513,12 +1575,73 @@
   }
   .collection__head {
     grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
   }
   .collection__intro {
-    text-align: left;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .story__eyebrow {
+    justify-content: center;
+  }
+  .story__head,
+  .story__lead,
+  .story__body,
+  .story__quote {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .story__list,
+  .story__pillars {
+    align-items: center;
+  }
+  .pillar {
+    text-align: center;
+  }
+  .journey__introtitle,
+  .journey__introtxt,
+  .journey__title {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .journey__bar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .journey__bar-l {
+    align-items: center;
+  }
+  .inter__copy {
+    text-align: center;
+  }
+  .jpanel__text {
+    text-align: center;
+  }
+  .jpanel__desc,
+  .jpanel__kicker {
+    margin-inline: auto;
   }
   .avis__grid {
     grid-template-columns: 1fr;
+  }
+  .wproofwall {
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+  .wproof {
+    flex: 0 1 44%;
+    transform: none !important;
+    margin: 0 !important;
+  }
+  .wproof--a {
+    transform: rotate(-2.5deg) !important;
+  }
+  .wproof--c {
+    transform: rotate(2.5deg) !important;
+  }
+  .wproofwall__arrow {
+    display: none;
   }
   .brandstrip__item {
     font-size: 30px;

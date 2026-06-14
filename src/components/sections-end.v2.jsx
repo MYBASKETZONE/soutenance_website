@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Icon, Magnetic, CountdownGrid } from "./ui";
 import { useOrder } from "./shop";
 import { Doodle, Mark, Note, Stamp, Scribble, Ringed } from "./doodles";
-import { mbz_logo } from "../assets/img";
+import { mbz_logo, proof_1, proof_2, proof_3 } from "../assets/img";
 
 /* ============================================================
    04 — Countdown (narrative climax) — doodle peak, on black
@@ -121,29 +121,20 @@ function CountdownSection() {
 /* ============================================================
    Testimonials
    ============================================================ */
+/* A real proof screenshot — portrait phone frame, slight tilt. */
+function WaCard({ src, className = "", slot = "", delay = "0ms" }) {
+  return (
+    <figure
+      className={"wproof " + slot}
+      data-reveal
+      style={{ "--reveal-delay": delay }}
+    >
+      <img src={src} alt="Discussion client réelle" loading="lazy" />
+    </figure>
+  );
+}
+
 function Testimonials() {
-  const data = [
-    [
-      "Sarah A.",
-      "Étudiante · UAC",
-      "J'ai eu mes Air Force pile pour ma soutenance. Zéro stress, livré à la maison la veille.",
-    ],
-    [
-      "Aristide K.",
-      "Étudiant · HECM",
-      "Précommande le matin, payé direct, paire réservée à mon nom. Du sérieux, vraiment.",
-    ],
-    [
-      "Inès D.",
-      "Étudiante · ESGIS",
-      "Mon binôme et moi assortis le jour J. Tout le monde a demandé où on avait trouvé ça.",
-    ],
-    [
-      "Yann O.",
-      "Étudiant · IUT",
-      "Les loafers étaient parfaits avec mon costume. Qualité au top pour le prix.",
-    ],
-  ];
   return (
     <section className="avis dscope" id="avis">
       <div className="wrap">
@@ -161,9 +152,9 @@ function Testimonials() {
               data-reveal
               style={{ "--reveal-delay": "60ms" }}
             >
-              Ils ont précommandé
+              Vraies discussions,
               <br />
-              chez MBZ
+              vraies livraisons
             </h2>
             <Note
               className="hide-sm"
@@ -171,7 +162,7 @@ function Testimonials() {
               rotate={-4}
               style={{ display: "inline-block", marginTop: 12 }}
             >
-              vrai de vrai
+              captures réelles, zéro montage
               <Doodle
                 name="arrow-e"
                 w={70}
@@ -208,40 +199,40 @@ function Testimonials() {
             </span>
           </div>
         </div>
-        <div className="avis__grid">
-          {data.map(([n, r, q], i) => (
-            <figure
-              className="avcard"
-              key={n}
-              data-reveal
-              style={{ "--reveal-delay": (i % 4) * 80 + "ms" }}
-            >
-              <div className="avcard__stars">
-                {[0, 1, 2, 3, 4].map((s) => (
-                  <Icon.Star key={s} style={{ color: "var(--signal)" }} />
-                ))}
-              </div>
-              <blockquote>{q}</blockquote>
-              <figcaption>
-                <span className="avcard__avatar">{n[0]}</span>
-                <div>
-                  <b>{n}</b>
-                  <span>{r}</span>
-                </div>
-                <span className="avcard__verified">
-                  <Icon.Check /> Vérifié
-                </span>
-              </figcaption>
-              {i === 1 && (
-                <Doodle
-                  name="sym-5"
-                  w={34}
-                  color="var(--green)"
-                  className="avcard__heart hide-sm"
-                />
-              )}
-            </figure>
-          ))}
+
+        <div
+          className="wproofwall"
+          data-reveal
+          style={{ "--reveal-delay": "120ms" }}
+        >
+          <WaCard src={proof_1} className="wproof--a" delay="0ms" />
+          <WaCard src={proof_2} className="wproof--b" delay="100ms" />
+          <WaCard src={proof_3} className="wproof--c" delay="200ms" />
+
+          <Mark
+            name="sparkle"
+            w={30}
+            color="var(--signal)"
+            pos={{ top: "-18px", left: "-14px" }}
+            rotate={-8}
+            className="hide-sm wproofwall__sp1"
+          />
+          <Mark
+            name="arrow-a"
+            w={62}
+            color="var(--ink)"
+            pos={{ top: "34%", left: "30%" }}
+            rotate={6}
+            className="hide-sm wproofwall__arrow"
+          />
+          <Mark
+            name="sym-5"
+            w={36}
+            color="var(--green)"
+            pos={{ bottom: "-22px", right: "-6px" }}
+            rotate={14}
+            className="hide-sm wproofwall__sp2"
+          />
         </div>
       </div>
     </section>
@@ -326,15 +317,6 @@ function Footer() {
       ],
     ],
     [
-      "Marques",
-      [
-        ["Nike", "#"],
-        ["Vans", "#"],
-        ["Converse", "#"],
-        ["Dr. Martens", "#"],
-      ],
-    ],
-    [
       "Aide",
       [
         ["Livraison Cotonou", "#"],
@@ -355,7 +337,7 @@ function Footer() {
               qualité, livrées chez toi — prêtes pour ta soutenance.
             </p>
             <Note className="footer__sign" tone="mut" rotate={-3}>
-              fait main, à Cotonou
+              N'hésitez pas à nous contacter et à vous abonner.
               <Doodle
                 name="sym-5"
                 w={22}

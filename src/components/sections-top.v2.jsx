@@ -109,9 +109,6 @@ function Nav() {
             ))}
           </nav>
           <div className="nav__actions">
-            <button className="nav__ic" aria-label="Recherche">
-              <Icon.Search />
-            </button>
             <button
               className="nav__bag"
               onClick={openDrawer}
@@ -353,7 +350,7 @@ function Hero() {
           </Note>
 
           <div className="hero__floattag hero__floattag--top">
-            <b>Loafer à chaîne</b>
+            <b>Mocassion Loafer</b>
             <span>Prêt pour le grand jour</span>
           </div>
           <div className="hero__floattag hero__floattag--bot">
