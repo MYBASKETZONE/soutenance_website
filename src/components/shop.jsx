@@ -535,7 +535,7 @@ function CartDrawer() {
               </div>
               <div className="drawer__line drawer__line--mut">
                 <span>Livraison Cotonou</span>
-                <b>Offerte</b>
+                <b>Frais à prévoir</b>
               </div>
               <div className="drawer__total">
                 <span>Total à régler</span>
