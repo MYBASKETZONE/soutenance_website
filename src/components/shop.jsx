@@ -375,6 +375,69 @@ function OrderModal() {
 }
 
 /* ============================================================
+   WhatsApp confirm — editable message before sending
+   ============================================================ */
+const WA_PHONE = "2290156685767";
+
+function WhatsAppConfirm({ cart, total, onClose }) {
+  const buildMsg = () => {
+    const lines = cart
+      .map(
+        (i) =>
+          `• ${i.brand} ${i.name} (Pointure ${i.size} × ${i.qty}) — ${FCFA(i.price * i.qty)}`,
+      )
+      .join("\n");
+    return `Bonjour MYBASKETZONE 👋\n\nJe voudrais confirmer ma précommande :\n\n${lines}\n\nTotal : ${FCFA(total)}\n\nLivraison à Cotonou 🚚`;
+  };
+
+  const [msg, setMsg] = useState(() => buildMsg());
+
+  const send = () => {
+    window.open(
+      `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
+  return (
+    <div className="wa-confirm">
+      <div className="wa-confirm__head">
+        <div className="confirm__badge">
+          <Icon.Check />
+        </div>
+        <h4 className="display">Précommande confirmée !</h4>
+        <p className="wa-confirm__desc">
+          Finalise ta réservation en envoyant le message ci-dessous sur
+          WhatsApp. Tu peux le modifier avant d'envoyer.
+        </p>
+      </div>
+      <div>
+        <div className="wa-confirm__label">Message WhatsApp</div>
+        <textarea
+          className="wa-confirm__msg"
+          value={msg}
+          onChange={(e) => setMsg(e.target.value)}
+          rows={9}
+        />
+      </div>
+      <div className="wa-confirm__actions">
+        <button className="btn wa-confirm__send" onClick={send}>
+          <Icon.Whatsapp />
+          <span>Envoyer sur WhatsApp</span>
+          <span className="btn-arrow">
+            <Icon.Arrow />
+          </span>
+        </button>
+        <button className="btn btn--ghost wa-confirm__close" onClick={onClose}>
+          <span>Fermer</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
    Cart drawer
    ============================================================ */
 function CartDrawer() {
@@ -413,19 +476,7 @@ function CartDrawer() {
         </header>
 
         {confirmed ? (
-          <div className="confirm">
-            <div className="confirm__badge">
-              <Icon.Check />
-            </div>
-            <h4 className="display">Précommande confirmée</h4>
-            <p>
-              Ta paire est réservée pour ta soutenance. On te contacte sur
-              WhatsApp pour la livraison à Cotonou.
-            </p>
-            <button className="btn" onClick={closeDrawer}>
-              <span>Continuer</span>
-            </button>
-          </div>
+          <WhatsAppConfirm cart={cart} total={total} onClose={closeDrawer} />
         ) : cart.length === 0 ? (
           <div className="drawer__empty">
             <p className="serif-it">Ton panier est vide.</p>

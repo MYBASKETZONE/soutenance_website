@@ -637,6 +637,81 @@
 }
 
 /* ============================================================
+   WhatsApp confirm
+   ============================================================ */
+.wa-confirm {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px clamp(20px, 3vw, 32px) 32px;
+}
+.wa-confirm__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+.wa-confirm__head h4 {
+  font-size: 22px;
+}
+.wa-confirm__desc {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 36ch;
+  line-height: 1.5;
+}
+.wa-confirm__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.wa-confirm__msg {
+  width: 100%;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper-2);
+  resize: vertical;
+  min-height: 180px;
+  transition: border-color 0.2s;
+}
+.wa-confirm__msg:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+.wa-confirm__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wa-confirm__send {
+  width: 100%;
+  justify-content: space-between;
+  padding: 17px 24px;
+  background: #25d366;
+}
+.wa-confirm__send::after {
+  background: #1da851;
+}
+.wa-confirm__send span {
+  color: #fff;
+}
+.wa-confirm__close {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 920px) {
