@@ -359,7 +359,7 @@ function Footer() {
                 <Icon.Whatsapp />
               </a>
               <a
-                href="https://www.instagram.com/e.m.and___y?igsh=dDY4dnFpcnhrandr&utm_source=qr"
+                href="https://www.instagram.com/mybasket.zone/"
                 aria-label="Instagram"
                 className="footer__ig"
               >
