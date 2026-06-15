@@ -1557,6 +1557,17 @@
     text-align: center;
     justify-items: center;
   }
+  .ctaband__l {
+    text-align: center;
+    width: 100%;
+  }
+  .ctaband__sub {
+    margin-inline: auto;
+  }
+  .ctaband__actions {
+    align-items: center;
+    width: 100%;
+  }
   .inter {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -1702,20 +1713,29 @@
     grid-template-columns: 1fr;
     text-align: center;
     justify-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: clamp(20px, 5vw, 40px);
   }
   .ctaband__l {
     text-align: center;
+    width: 100%;
   }
   .ctaband__sub {
     margin-inline: auto;
   }
   .ctaband__actions {
-    align-items: center; /* ✅ centre les boutons dans leur colonne */
+    align-items: center;
     width: 100%;
+  }
+  .ctaband__btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
   }
 
   .ctaband__arrow {
-    display: none; /* la flèche décorative n'a plus de sens centrée */
+    display: none;
   }
   /* Avis head */
   .avis__head {
