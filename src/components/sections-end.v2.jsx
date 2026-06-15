@@ -74,7 +74,7 @@ function CountdownSection() {
             color="var(--signal)"
             className="ringed--front"
           >
-            15 juin.
+            18 juin.
           </Ringed>
         </h2>
         <p

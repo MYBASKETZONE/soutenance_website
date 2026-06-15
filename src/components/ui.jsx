@@ -210,7 +210,7 @@ export function Magnetic({
 /* ============================================================
    Countdown to deadline (17 June 2026, 23:59 local)
    ============================================================ */
-export const DEADLINE = new Date("2026-06-17T23:59:59");
+export const DEADLINE = new Date("2026-06-18T23:59:59");
 
 export function useCountdown(target = DEADLINE) {
   const calc = () => {
