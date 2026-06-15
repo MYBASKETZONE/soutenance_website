@@ -208,7 +208,7 @@ export function Magnetic({
 }
 
 /* ============================================================
-   Countdown to deadline (17 June 2026, 23:59 local)
+   Countdown to deadline (18 June 2026, 23:59 local)
    ============================================================ */
 export const DEADLINE = new Date("2026-06-18T23:59:59");
 

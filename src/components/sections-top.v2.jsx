@@ -19,7 +19,7 @@ import {
 function TopMarquee() {
   const items = [
     "Précommande ouverte",
-    "Clôture le 15 juin 2026",
+    "Clôture le 18 juin 2026",
     "Livré chez toi à Cotonou",
     "Paiement à la commande",
     "Édition Soutenance 2026",
@@ -158,7 +158,7 @@ function HeroCountdown() {
       <div className="hcd__head">
         <span className="hcd__head-txt">
           <b>Clôture des précommandes</b>
-          <span>Lundi 15 juin 2026 · 23h59</span>
+          <span>Jeudi 18 juin 2026 · 23h59</span>
         </span>
       </div>
       <div className="hcd__tiles">

@@ -383,7 +383,7 @@ function Footer() {
         <div className="footer__bottom">
           <span>© 2026 MYBASKETZONE · Cotonou, Bénin</span>
           <span className="footer__made">
-            Édition Soutenance — précommande jusqu'au 17 juin 2026
+            Édition Soutenance — précommande jusqu'au 18 juin 2026
           </span>
         </div>
       </div>

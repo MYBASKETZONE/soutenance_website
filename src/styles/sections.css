@@ -1554,6 +1554,8 @@
   }
   .ctaband__box {
     grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
   }
   .inter {
     grid-template-columns: 1fr;
@@ -1694,12 +1696,26 @@
   .binome__body {
     margin-inline: auto;
   }
+
   /* CTA band */
+  .ctaband__box {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
   .ctaband__l {
     text-align: center;
   }
   .ctaband__sub {
     margin-inline: auto;
+  }
+  .ctaband__actions {
+    align-items: center; /* ✅ centre les boutons dans leur colonne */
+    width: 100%;
+  }
+
+  .ctaband__arrow {
+    display: none; /* la flèche décorative n'a plus de sens centrée */
   }
   /* Avis head */
   .avis__head {
